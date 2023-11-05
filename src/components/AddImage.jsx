@@ -12,28 +12,6 @@ const baseStyle = {
   transition: "border .3s ease-in-out",
 };
 
-const activeStyle = {
-  borderColor: "#2196f3",
-};
-
-const acceptStyle = {
-  borderColor: "#00e676",
-};
-
-const rejectStyle = {
-  borderColor: "#ff1744",
-};
-
-const AddImage = ({ }) => {
-
-  const style = {
-    ...baseStyle,
-    ...(isDragActive ? activeStyle : {}),
-    ...(isDragAccept ? acceptStyle : {}),
-    ...(isDragReject ? rejectStyle : {}),
-  };
-
-
   return (
     <div className="images-container">
     <div

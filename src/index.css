@@ -1,3 +1,108 @@
+/* Tailwind CSS */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Box-sizing and default styles */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    line-height: 1.5;
+}
+
+/* Image styles */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Container styles */
+.container {
+    max-width: 80%;
+    margin-inline: auto;
+}
+
+/* Main grid styles */
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+    gap: 1rem;
+    cursor: pointer;
+    padding: 1.5em 0;
+    margin-top: 50px;
+}
+
+/* Card styles */
+.card {
+    box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    background: #00000094;
+}
+
+.card img {
+    object-fit: cover;
+}
+
+.featured {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+/* Card content and checkbox styles */
+.card-content {
+    position: relative;
+}
+
+.checkbox {
+    display: none;
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 20px;
+    width: 50px;
+    height: 20px;
+}
+
+.checkbox.visible {
+    display: block;
+    visibility: visible;
+}
+
+.checkbox.hidden {
+    display: none;
+    visibility: hidden;
+}
+
+.card-content:hover > .checkbox {
+    display: block;
+}
+
+/* Images container and thumbnail styles */
+.images-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.image-thumb {
+    margin: 0.5rem;
+    max-width: 150px;
+}
+
+.image-thumb img {
+    width: 100%;
+    height: auto;
+}
