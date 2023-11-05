@@ -5,6 +5,13 @@ import AddImage from "./components/AddImage.jsx";
 import SingleCard from "./components/SingleCard.jsx";
 
 const App = () => {
+  // Load selectedImages and deletedImages from localStorage
+  const initialSelectedImages = JSON.parse(localStorage.getItem("selectedImages")) || [];
+  const initialDeletedImages = JSON.parse(localStorage.getItem("deletedImages")) || [];
+
+  // Clear deletedImages from localStorage 
+  localStorage.removeItem("deletedImages");
+
   const [images, setImages] = useState(galleryList);
   const [selectedImages, setSelectedImages] = useState(initialSelectedImages);
   const [deletedImages, setDeletedImages] = useState(initialDeletedImages);
@@ -29,6 +36,13 @@ const App = () => {
     setDeletedImages([...deletedImages, ...deleted]);
     setSelectedImages([]);
   };
+
+  // Save selectedImages and deletedImages to localStorage when they change
+  useEffect(() => {
+    localStorage.setItem("selectedImages", JSON.stringify(selectedImages));
+    localStorage.setItem("deletedImages", JSON.stringify(deletedImages));
+  }, [selectedImages, deletedImages]);
+
 
   return (
     <div className="container">
@@ -56,7 +70,7 @@ const App = () => {
               <hr className="w-full border-1 border-red-600 rounded-lg " />
             )}
           </div>
-
+          
         )}
       </div>
       <div className="bg-gray-100 px-10 rounded-lg mb-10">
