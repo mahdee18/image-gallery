@@ -12,7 +12,27 @@ const baseStyle = {
   transition: "border .3s ease-in-out",
 };
 
-const AddImage = ({ }) => {
+const activeStyle = {
+  borderColor: "#2196f3",
+};
+
+const acceptStyle = {
+  borderColor: "#00e676",
+};
+
+const rejectStyle = {
+  borderColor: "#ff1744",
+};
+
+const AddImage = ({ onDrop }) => {
+
+  const style = {
+    ...baseStyle,
+    ...(isDragActive ? activeStyle : {}),
+    ...(isDragAccept ? acceptStyle : {}),
+    ...(isDragReject ? rejectStyle : {}),
+  };
+
 
   return (
     <div className="images-container">
@@ -25,8 +45,8 @@ const AddImage = ({ }) => {
         <i className="fas fa-cloud-upload-alt text-4xl text-gray-400 mb-2"></i>
         <img
           className="w-10 h-10 mx-auto mb-10"
-          src="https://i.ibb.co/RpvDj8H/add-image.png"
-          alt="Add images"
+          src="https://i.ibb.co/mNYd1Gd/pngwing-com-1.png"
+          alt="upload image"
         />
         <p className="text-gray-500 text-lg lg:text-xl">Add Images</p>
       </div>

@@ -1,7 +1,7 @@
 import React from "react";
 
+const SingleCard = ({ src, title, id, toggleImageSelection }) => {
 
-const SingleCard = ({ src, title, id, index, moveImage, isFeature, selectedImages, toggleImageSelection }) => {
 
   return (
     <div

@@ -5,9 +5,10 @@ import AddImage from "./components/AddImage.jsx";
 import SingleCard from "./components/SingleCard.jsx";
 
 const App = () => {
-
-
-
+  const [images, setImages] = useState(galleryList);
+  const [selectedImages, setSelectedImages] = useState(initialSelectedImages);
+  const [deletedImages, setDeletedImages] = useState(initialDeletedImages);
+  const [isDeleteButtonHovered, setDeleteButtonHovered] = useState(false);
 
   // Function to toggle the selection of an image
   const toggleImageSelection = (imageId) => {
@@ -29,13 +30,15 @@ const App = () => {
     setSelectedImages([]);
   };
 
-
-
   return (
-    /*-------------Image Gallery section start-------------------*/
     <div className="container">
       <div className="bg-gray-100 p-10 rounded-lg flex items-center justify-between">
-
+        <div className="text-center md:mb-2 text-sm lg:text-3xl font-semibold flex items-center gap-2">
+          <FaCheckSquare className={`text-blue-600 w-6 h-6 ${selectedImages.length !== 0 ? 'block' : 'hidden'}`} />
+          {selectedImages.length === 0
+            ? "Image Gallery"
+            : `${selectedImages.length} ${selectedImages.length === 1 ? "File" : "Files"} Selected`}
+        </div>
 
         {selectedImages.length > 0 && (
           <div
@@ -53,7 +56,7 @@ const App = () => {
               <hr className="w-full border-1 border-red-600 rounded-lg " />
             )}
           </div>
-          
+
         )}
       </div>
       <div className="bg-gray-100 px-10 rounded-lg mb-10">
