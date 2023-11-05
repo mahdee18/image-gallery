@@ -42,8 +42,6 @@ const App = () => {
     localStorage.setItem("selectedImages", JSON.stringify(selectedImages));
     localStorage.setItem("deletedImages", JSON.stringify(deletedImages));
   }, [selectedImages, deletedImages]);
-
-
   return (
     <div className="container">
       <div className="bg-gray-100 p-10 rounded-lg flex items-center justify-between">

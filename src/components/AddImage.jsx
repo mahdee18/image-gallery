@@ -24,7 +24,7 @@ const rejectStyle = {
   borderColor: "#ff1744",
 };
 
-const AddImage = ({ onDrop }) => {
+const AddImage = ({ }) => {
 
   const style = {
     ...baseStyle,
