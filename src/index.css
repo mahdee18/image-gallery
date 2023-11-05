@@ -44,7 +44,7 @@ main {
     border-radius: 10px;
     position: relative;
     overflow: hidden;
-    transition: all 0.3s ease;
+    transition: linear 0.3s ease;
 }
 
 .card:hover {

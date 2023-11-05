@@ -68,7 +68,7 @@ const App = () => {
               <hr className="w-full border-1 border-red-600 rounded-lg " />
             )}
           </div>
-          
+           
         )}
       </div>
       <div className="bg-gray-100 px-10 rounded-lg mb-10">
