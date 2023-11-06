@@ -51,7 +51,7 @@ const SingleCard = ({ src, title, id, index, moveImage, isFeature, selectedImage
     },
   });
 
-  const cardClasses = `card border border-gray-300 border-1 ${isFeature ? 'featured' : ''}`;
+  const cardClasses = `card border border-gray-300 border-1 ${isFeature ? 'featured' : ''} ${isSelected ? 'opacity-50' : 'opacity-100'}`;
 
   drag(drop(ref));
 
