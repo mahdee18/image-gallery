@@ -47,23 +47,23 @@ const AddImage = ({ onDrop }) => {
 
   return (
     <div className="images-container">
-    <div
-      {...getRootProps({ style })}
-      className="card flex justify-center items-center h-full w-full border-dashed border-2 border-gray-500 p-8 rounded-lg cursor-pointer"
-    >
-      <input {...getInputProps()} />
-      <div className="text-center">
-        <i className="fas fa-cloud-upload-alt text-4xl text-gray-400 mb-2"></i>
-        <img
-          className="w-10 h-10 mx-auto mb-10"
-          src="https://i.ibb.co/mNYd1Gd/pngwing-com-1.png"
-          alt="upload image"
-        />
-        <p className="text-gray-500 text-lg lg:text-xl">Add Images</p>
+      <div
+        {...getRootProps({ style })}
+        className="card flex justify-center items-center h-full w-full border-dashed border-2 border-gray-500 p-8 rounded-lg cursor-pointer"
+      >
+        <input {...getInputProps()} />
+        <div className="text-center">
+          <i className="fas fa-cloud-upload-alt text-4xl text-gray-400 mb-2"></i>
+          <img
+            className="w-10 h-10 mx-auto mb-10"
+            src="https://i.ibb.co/mNYd1Gd/pngwing-com-1.png"
+            alt="upload image"
+          />
+          <p className="text-gray-500 text-lg lg:text-xl">Add Images</p>
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
 };
 
 export default AddImage;

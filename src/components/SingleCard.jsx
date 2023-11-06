@@ -25,9 +25,8 @@ const SingleCard = ({
     });
   }, []);
 
-  const cardClasses = `card border border-gray-300 border-1 ${
-    isFeature ? "featured" : ""
-  } ${isSelected ? "opacity-50" : "opacity-100"}`;
+  const cardClasses = `card border border-gray-300 border-1 ${isFeature ? "featured" : ""
+    } ${isSelected ? "opacity-50" : "opacity-100"}`;
 
   const [, drop] = useDrop({
     accept: "image",
@@ -92,7 +91,7 @@ const SingleCard = ({
     >
       {/* Container for image and checkbox */}
       <div className="card-content rounded-lg"
-       data-aos="fade-up" // AOS animation attribute
+        data-aos="fade-up" // AOS animation attribute
       >
         <img src={src} alt={title} />
         {/* Checkbox - Hidden by default, shown on hover, and always visible when selected */}

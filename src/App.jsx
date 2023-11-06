@@ -57,7 +57,7 @@ const App = () => {
     const updatedImages = acceptedFiles.map((file, index) => ({
       id: `new-image-${index}`,
       img: URL.createObjectURL(file),
-      title: "New Image", 
+      title: "New Image",
     }));
 
     // Add the uploaded images to the existing images

@@ -49,7 +49,7 @@ main {
 }
 
 .card:hover {
-    background: #00000094;
+    background: #747473;
     transition: all linear 0.2s;
 }
 
