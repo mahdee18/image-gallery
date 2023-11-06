@@ -38,7 +38,7 @@ Explore the live demo of my Responsive Image Gallery: [Live Demo](https://image-
 
 ### About Me
 
-I crafted this project with passion and attention to detail. If you have any questions or feedback, please feel free to reach out to me on Phone: Call me at +8801709-903362 (WhatsApp) or [[LinkedIn](#insert-linkedin-profile-link)](https://www.linkedin.com/in/mahdee-al-amin/).
+I crafted this project with passion and attention to detail. If you have any questions or feedback, please feel free to reach out to me on Phone: Call me at +8801709-903362 (WhatsApp) or [[LinkedIn](https://www.linkedin.com/in/mahdee-al-amin/)].
 
 ---
 
