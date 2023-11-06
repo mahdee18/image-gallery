@@ -64,9 +64,9 @@ const App = () => {
     setImages((prevImages) => [...prevImages, ...updatedImages]);
   }, []);
   return (
-    <div className="container">
-      <div className="bg-gray-100 p-10 rounded-lg flex items-center justify-between">
-        <div className="text-center md:mb-2 text-sm lg:text-3xl font-semibold flex items-center gap-2">
+    <div className="container py-10">
+      <div className="bg-gray-100 p-10 flex items-center justify-between">
+        <div className="text-center text-sm lg:text-3xl font-semibold flex items-center gap-2">
           <FaCheckSquare className={`text-blue-600 w-6 h-6 ${selectedImages.length !== 0 ? 'block' : 'hidden'}`} />
           {selectedImages.length === 0
             ? "Image Gallery"
@@ -91,8 +91,7 @@ const App = () => {
           </div>
         )}
       </div>
-      <div className="bg-gray-100 px-10 rounded-lg mb-10">
-        <hr className="w-full border-2 border-x-gray-300" />
+      <div className="bg-gray-100 px-10 mb-15 border border-t-1 border-gray-300 ">
         <main className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {images.map((image, index) => (
             <SingleCard
