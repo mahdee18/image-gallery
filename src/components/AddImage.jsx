@@ -1,3 +1,4 @@
+import { useDropzone } from "react-dropzone";
 const baseStyle = {
   display: "flex",
   flexDirection: "column",
@@ -11,6 +12,37 @@ const baseStyle = {
   color: "#bdbdbd",
   transition: "border .3s ease-in-out",
 };
+
+const activeStyle = {
+  borderColor: "#2196f3",
+};
+
+const acceptStyle = {
+  borderColor: "#00e676",
+};
+
+const rejectStyle = {
+  borderColor: "#ff1744",
+};
+
+const AddImage = ({ onDrop }) => {
+  const {
+    getRootProps,
+    getInputProps,
+    isDragActive,
+    isDragAccept,
+    isDragReject,
+  } = useDropzone({
+    onDrop,
+    accept: "image/jpeg, image/png",
+  });
+
+  const style = {
+    ...baseStyle,
+    ...(isDragActive ? activeStyle : {}),
+    ...(isDragAccept ? acceptStyle : {}),
+    ...(isDragReject ? rejectStyle : {}),
+  };
 
 
   return (

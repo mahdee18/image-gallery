@@ -17,6 +17,16 @@ const App = () => {
   const [deletedImages, setDeletedImages] = useState(initialDeletedImages);
   const [isDeleteButtonHovered, setDeleteButtonHovered] = useState(false);
 
+  // Function to move an image within the list
+  const moveImage = (dragIndex, hoverIndex) => {
+    setImages((prevImages) => {
+      const clonedImages = [...prevImages];
+      const removedImage = clonedImages.splice(dragIndex, 1)[0];
+      clonedImages.splice(hoverIndex, 0, removedImage);
+      return clonedImages;
+    });
+  };
+
   // Function to toggle the selection of an image
   const toggleImageSelection = (imageId) => {
     if (selectedImages.includes(imageId)) {
@@ -42,6 +52,17 @@ const App = () => {
     localStorage.setItem("selectedImages", JSON.stringify(selectedImages));
     localStorage.setItem("deletedImages", JSON.stringify(deletedImages));
   }, [selectedImages, deletedImages]);
+
+  const onDrop = useCallback((acceptedFiles) => {
+    const updatedImages = acceptedFiles.map((file, index) => ({
+      id: `new-image-${index}`,
+      img: URL.createObjectURL(file),
+      title: "New Image", 
+    }));
+
+    // Add the uploaded images to the existing images
+    setImages((prevImages) => [...prevImages, ...updatedImages]);
+  }, []);
   return (
     <div className="container">
       <div className="bg-gray-100 p-10 rounded-lg flex items-center justify-between">
@@ -68,7 +89,6 @@ const App = () => {
               <hr className="w-full border-1 border-red-600 rounded-lg " />
             )}
           </div>
-           
         )}
       </div>
       <div className="bg-gray-100 px-10 rounded-lg mb-10">
